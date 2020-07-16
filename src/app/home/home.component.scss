@@ -1,0 +1,40 @@
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+h1 {
+  color: red;
+  font-family: "merriweather";
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+.span{
+  font-size: 20px;
+  font-family: "merriweather";
+font-weight: bold;
+}
+span{
+  font-family: "merriweather";
+  margin: 0;
+  padding: 0;
+
+}
+.MG {
+  color: red;
+  font-family: "merriweather";
+  font-size: 20px;
+  font-weight: bold;
+}
+#chartdiv { 
+  height:80vh;
+ }
+
+#scroll{
+  overflow-y:scroll !important;
+  height: 50vh;
+}
+
+

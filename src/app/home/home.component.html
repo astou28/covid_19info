@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+
+</head>
+
+<body>
+
+        <!--Main Navigation-->
+        <header>
+        
+            <nav class="navbar navbar-expand-lg navbar-dark special-color-dark">
+                <a class="navbar-brand" href="#"><strong>Navbar</strong></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                    <span>Today is {{today | date}}</span>
+                    <ul class="navbar-nav nav-flex-icons">
+                        <li class="nav-item">
+                            <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"><i class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        
+        </header>
+        <!--Main Navigation-->
+        <div class="row">
+        
+            <div class="col-lg-4">
+        
+                <h1>TOTAL DANS LE MONDE : {{totalCases}} </h1>
+                <div class="row mt-1">
+                    <div class="col-lg-5 offset-2 MG">MORTS : {{totalDeaths}} </div>
+                    <div class="col-lg-5 MG">GUERIS : {{totalRecovered}} </div>
+                </div>
+                <div class="mb-2 mt-2 form-inline">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input type="text" [(ngModel)]="country" (input)="Search()" class="form-control form-control-sm ml-3 w-75"
+                        type="text" placeholder="Search" aria-label="Search">
+        
+                </div>
+                <div id="scroll">
+                    <div *ngFor="let datacontrie of table">
+                        <span class="span">Country: {{datacontrie.country}} </span> <br>
+                        <span>TotalCases: {{datacontrie.cases}}</span>&nbsp; &nbsp;&nbsp;&nbsp;
+                        <span>Deaths: {{datacontrie.deaths}}</span>&nbsp; &nbsp;&nbsp;&nbsp;
+                        <span>Recovered: {{datacontrie.recovered}}</span>
+                    </div>
+                </div>
+        
+            </div>
+            <div class="col-lg-8">
+                <div id="chartdiv"></div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="page-footer font-small special-color-dark pt-4">
+        
+            <!-- Footer Elements -->
+            <div class="container">
+        
+                <!-- Social buttons -->
+                <ul class="list-unstyled list-inline text-center">
+                    <li class="list-inline-item">
+                        <a class="btn-floating btn-fb mx-1">
+                            <i class="fab fa-facebook-f"> </i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating btn-tw mx-1">
+                            <i class="fab fa-twitter"> </i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating btn-gplus mx-1">
+                            <i class="fab fa-google-plus-g"> </i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating btn-li mx-1">
+                            <i class="fab fa-linkedin-in"> </i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating btn-dribbble mx-1">
+                            <i class="fab fa-dribbble"> </i>
+                        </a>
+                    </li>
+                </ul>
+                <!-- Social buttons -->
+        
+            </div>
+            <!-- Footer Elements -->
+        
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+                <a href=""> ASTOU SARR</a>
+            </div>
+            <!-- Copyright -->
+        
+        </footer>
+        <!-- Footer -->
+
+</body>
+
+</html>
